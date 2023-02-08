@@ -1,13 +1,13 @@
-<?php include('../include/Header.php'); ?>
 <?php
 session_start();
 if (isset($_SESSION['isCustLoggedIn'])) {
   echo "<script>
-          alert('You are already login');
-          window.location.href='../index.php';
-          </script>";
+  alert('You are already login');
+  window.location.href='../index.php';
+  </script>";
 }
 ?>
+<?php include('../include/Header.php'); ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
   <div class="container-fluid">
     <a class="navbar-brand" href="../index.php">Car Rental System</a>

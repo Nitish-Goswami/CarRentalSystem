@@ -33,6 +33,10 @@ The application should contain 2 types of users: Customers and Car Rental Agency
 1. PHP
 2. MySQL
 
+### Used Tools
+1. VS Code
+2. XAMPP
+
 
 ## Demo
 <picture>
@@ -42,15 +46,15 @@ The application should contain 2 types of users: Customers and Car Rental Agency
 
 
 ## Installation
-1. Clone form Github
+1. #### Open xampp/htdocs/
+
+2. #### Clone form Github
 ```
 git clone https://github.com/Nitish-Goswami/CarRentalSystem.git
 cd CarRentalSystem
-````
-
-
-
- ```
-npm i express
-npm i mongoose
 ```
+
+3. #### Setup Database
+
+
+
