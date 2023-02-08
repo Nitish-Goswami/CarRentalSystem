@@ -9,7 +9,13 @@ if (isset($_SESSION['isCustLoggedIn'])) {
 }
 ?>
 
-<div class="container mt-5">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../index.php">Car Rental System</a>
+  </div>
+</nav>
+
+<div class="container mt-5 ">
   <h1>Customer Signup Form</h1>
   <?php if (isset($_GET['error'])) { ?>
 

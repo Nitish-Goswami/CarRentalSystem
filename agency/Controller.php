@@ -92,4 +92,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["ListCar"])) {
            </script>";
     }
 }
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["UpdateCar"])) {
+
+    $seatingCapacity = validate($_POST["SeatingCapacity"]);
+    $rentPerDay = validate($_POST["RentPerDay"]);
+    $vehicleID = $_POST['vehicleID'];
+
+
+    $sql = "UPDATE `vehicle` SET `seating_capacity`='$seatingCapacity',`rentperday`='$rentPerDay' WHERE id=$vehicleID";
+
+    if (mysqli_query($conn, $sql)) {
+        echo "<script>
+           alert('Car Updated');
+           window.location.href='./index.php';
+           </script>";
+    }
+}
 ?>

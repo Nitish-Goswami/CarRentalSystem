@@ -5,7 +5,7 @@ include('./include/Header.php');
 include('./include/Navbar.php');
 include('./include/Utility.php');
 ?>
-<main class="container mt-5">
+<main class="container-fluid mt-5 bg-secondary">
 
 
     <!-- Jumbotron For Welcome -->
@@ -15,7 +15,7 @@ include('./include/Utility.php');
                 <?php if (isset($_SESSION['isAgencyLoggedIn']) || isset($_SESSION['isCustLoggedIn']))
                     echo $_SESSION['name']; ?>
             </h1>
-            <p class="lead">We are the leading Car Renting Company in India.Our compnay goal is to provide safe and
+            <p class="lead text-white">We are the leading Car Renting Company in India.Our compnay goal is to provide safe and
                 secure journey.
                 We have all top cars maintained by our well certified mechanics.
             </p>
@@ -30,15 +30,15 @@ include('./include/Utility.php');
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) > 0) {
-            
+
             while ($row = mysqli_fetch_assoc($result)) {
                 if (isset($_SESSION["isCustLoggedIn"])) {
                     $btnOfBook = '<a href="booking.php?id=' . $row['id'] . '" class="btn btn-primary">Book</a>';
                 }
                 checkAndUpdateBookingStatus($conn, $row['id']);
 
-                ?>
-                <div class="card col-sm-12 mx-3 px-3" style="width: 25rem;">
+        ?>
+                <div class="card m-3 p-3" style="width: 25rem;">
                     <img class="card-img-top" src="./include/car.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">
@@ -57,18 +57,15 @@ include('./include/Utility.php');
                             <?php echo $row['number'] ?>
                         </li>
                     </ul>
-                    <div class="card-body">
                         <?php echo $btnOfBook ?>
-                    </div>
                 </div>
-                <?php
+        <?php
             }
-
         } else {
             echo '<h1>Sorry for inconvenience. All cars have been booked.</h1>';
         }
         ?>
     </div>
-    </main>
+</main>
 
 <?php include('./include/Footer.php'); ?>

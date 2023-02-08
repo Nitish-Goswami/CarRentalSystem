@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 22, 2023 at 07:55 AM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 8.0.8
+-- Generation Time: Feb 08, 2023 at 05:53 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,7 +34,7 @@ CREATE TABLE `agency` (
   `phone` text NOT NULL,
   `password` varchar(200) NOT NULL,
   `createdAt` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `agency`
@@ -57,16 +57,14 @@ CREATE TABLE `booking` (
   `custID` int(11) NOT NULL,
   `noOfDays` int(11) NOT NULL,
   `startTime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `booking`
 --
 
 INSERT INTO `booking` (`id`, `agencyID`, `carID`, `custID`, `noOfDays`, `startTime`) VALUES
-(14, 12, 3, 8, 0, '2023-01-21 17:11:04'),
-(15, 12, 4, 8, 0, '2023-01-21 17:11:08'),
-(16, 13, 5, 8, 10, '2023-01-22 05:25:01');
+(19, 13, 5, 11, 20, '2023-02-08 16:38:02');
 
 -- --------------------------------------------------------
 
@@ -80,15 +78,14 @@ CREATE TABLE `customer` (
   `email` varchar(50) NOT NULL,
   `phone` text NOT NULL,
   `password` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `customer`
 --
 
 INSERT INTO `customer` (`id`, `name`, `email`, `phone`, `password`) VALUES
-(8, 'Nitish Goswami', 'nkgoswami@gmail.com', '9205816348', '$2y$10$beWdIVvMvhPyuqP1/F/j6.Bv80U8e5CZkFVMXqeCs9FFALtnwBbTW'),
-(9, 'Satyam Ojha', 'sojha@gmail.com', '890123456', '$2y$10$.CuOr7SIp.zCCQBdiiXwl.A5ADR24zXApj.qY/n9wKKdDER.eHeYO');
+(11, 'Ritesh Kumar', 'ritesh@gmail.com', '9202194954', '$2y$10$6txG6S4DlYeoshNgRweoz.My1pvkh5yg5gCzoVgHVGhyOlmduN2pC');
 
 -- --------------------------------------------------------
 
@@ -104,18 +101,19 @@ CREATE TABLE `vehicle` (
   `seating_capacity` int(11) NOT NULL,
   `rentperday` int(11) NOT NULL,
   `isBooked` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `vehicle`
 --
 
 INSERT INTO `vehicle` (`id`, `agencyID`, `model_name`, `number`, `seating_capacity`, `rentperday`, `isBooked`) VALUES
-(3, 12, 'Honda City 2000', 'HR51 1111', 10, 1500, 'No'),
+(3, 12, 'Honda City 2000', 'HR51 1111', 15, 1500, 'No'),
 (4, 12, 'Maruti Alto 2015', 'HR51 2222', 5, 1100, 'No'),
 (5, 13, 'Tata Tiago 2020', 'UK07 3333', 7, 2100, 'No'),
 (6, 13, 'Swift Dzire 2015', 'UK07 4444', 10, 2000, 'No'),
-(7, 12, 'Maruti Wagnor 2015', 'BR41 5555', 5, 900, 'No');
+(7, 12, 'Maruti Wagnor 2015', 'BR41 5555', 5, 900, 'No'),
+(11, 12, 'Tata Nano 2010', 'HR 87 1212', 4, 1000, 'No');
 
 --
 -- Indexes for dumped tables
@@ -159,19 +157,19 @@ ALTER TABLE `agency`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `vehicle`
 --
 ALTER TABLE `vehicle`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

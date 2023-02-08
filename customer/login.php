@@ -8,7 +8,12 @@ if (isset($_SESSION['isCustLoggedIn'])) {
           </script>";
 }
 ?>
-<div class="container mt-5">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../index.php">Car Rental System</a>
+  </div>
+</nav>
+<div class="container mt-5  bg-secondary">
   <h1>Customer Login Form</h1>
   <?php if (isset($_GET['error'])) { ?>
 

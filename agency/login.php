@@ -8,6 +8,12 @@ if (isset($_SESSION['isAgencyLoggedIn'])) {
           </script>";
 }
 ?>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../index.php">Car Rental System</a>
+  </div>
+</nav>
+
 <div class="container mt-5">
   <div class="row">
     <h1>Agency Login Form</h1>
