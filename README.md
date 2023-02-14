@@ -16,9 +16,9 @@
 Assume you are designing a real-life system that will be used by real users. 
 The application should contain 2 types of users: Customers and Car Rental Agency.
 1. Frontend (Client )
-  React application contain all UI section of project
+  Bootstrap for making ui responsive.
 2. Backend (Server)
-  Express and MongoDB application which provide server logic to process client request.
+  XAMPP and MySQl for server and database
 
 ### Working
 
